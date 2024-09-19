@@ -1,0 +1,12 @@
+// Style the toolbar to have a fixed height
+.footer-toolbar {
+  height: 56px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  // Nested styling for the icon
+  .material-symbols-outlined {
+    font-size: 24px;
+  }
+}

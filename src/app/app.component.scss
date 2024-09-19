@@ -1,0 +1,24 @@
+/* app.component.css */
+
+/* Make the entire app use a column flexbox layout */
+:host {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensure the component covers the entire viewport height */
+}
+
+/* Header and footer should not grow */
+app-header,
+app-footer {
+  flex: 0 0 auto; /* Prevents the header and footer from stretching */
+}
+
+/* Main content should expand to fill the remaining space */
+/* Ensure it can grow and fill the available space between the header and footer. */
+/* Each routed component (e.g., "Home") should have its root element (:host) configured to fill the available space in the parent. */
+.content-container {
+  flex: 1 1 auto; /* Allow the content to grow and fill available space */
+  display: flex; /* Flexbox for content area */
+  flex-direction: column; /* Ensure that children (routed components) are in a column layout */
+  overflow: auto; /* Enable scrolling if content overflows */
+}

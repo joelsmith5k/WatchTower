@@ -1,0 +1,40 @@
+.app-title {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+/* Spacer to push elements to the right */
+.spacer {
+  flex: 1 1 auto;
+}
+
+mat-toolbar {
+  height: 56px;
+}
+
+/* Adjust the toolbar button styles */
+mat-toolbar button {
+  margin: 0 8px;
+}
+
+/* Ensure icons in the toolbar are appropriately sized */
+mat-icon {
+  font-size: 24px;
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+  /* For smaller screens, make the toolbar more compact */
+  .app-title {
+    font-size: 1rem;
+  }
+
+  mat-toolbar {
+    height: 56px;
+  }
+
+  /* Hide some buttons or icons to save space on smaller screens */
+  .hidden-on-small {
+    display: none;
+  }
+}

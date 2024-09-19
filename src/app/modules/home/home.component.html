@@ -1,0 +1,38 @@
+<!-- home.component.html -->
+<div class="home-container">
+
+    <!-- Title Card -->
+    <mat-card class="title-card" *ngIf="!showLearnMore">
+      <mat-card-title class="mat-display-1">Welcome to WatchTower Sports</mat-card-title>
+      <mat-card-actions>
+        <button mat-raised-button color="accent" (click)="onLearnMore()">Learn More</button>
+      </mat-card-actions>
+    </mat-card>
+
+
+    <!-- Details Card -->
+    <mat-card class="details-card" *ngIf="showLearnMore">
+        <mat-card-title class="mat-display-1">spec · u · late</mat-card-title>
+        <mat-card-subtitle class="subtitle">specere: to look</mat-card-subtitle>
+        <mat-card-subtitle class="subtitle">specula: watchtower</mat-card-subtitle>
+        <mat-card-subtitle class="subtitle">speculat: observed from a vantage point</mat-card-subtitle>
+        <mat-card-content class="details-content">
+            <p>The named WatchTower is derived from Latin 'Specula', a root of the modern Speculate; to form a theory or conjecture about a subject without firm evidence.
+            </p>
+            <p>Speculation has fascinated and defined modern societies - an estimated $7.5 trillion exchanges hands in speculative markets everyday.
+                It provides a chance to predict the future, and build and lose fortunes in the process.
+                
+            </p>
+            <p>The goal of WatchTower Sports is to assist with informed speculation based on statistics, trends, and predicitive analytics of unique, unexplored, or neglected sports betting markets.
+                WatchTower is built with an Angular frontend and ASP.NET Core backend.
+            </p>
+        </mat-card-content>
+        <mat-card-actions>
+
+        <button mat-icon-button (click)="onCloseLearnMore()">
+            <mat-icon>close</mat-icon>
+        </button>
+
+        </mat-card-actions>
+    </mat-card>
+</div>
