@@ -5,7 +5,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { RouterModule } from '@angular/router';
 
-
 @Component({
   selector: 'app-header',
   standalone: true,
@@ -14,9 +13,9 @@ import { RouterModule } from '@angular/router';
     MatButtonModule,
     MatIconModule,
     MatMenuModule,
-    RouterModule,  // Import RouterModule to use routerLink
+    RouterModule, // Import RouterModule to use routerLink
   ],
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent { }
+export class HeaderComponent {}

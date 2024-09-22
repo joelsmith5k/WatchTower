@@ -1,0 +1,40 @@
+:host {
+  display: flex;
+  flex: 1 1 auto;
+  justify-content: center;
+  //align-items: center;
+  padding: 16px;
+  flex-direction: row;
+}
+
+.hockey-header-card {
+  background: rgba(255, 255, 255, 0.9);
+  width: 100%; /* Full width of the parent */
+  height: 96x; /* Fixed height */
+  border: 2px solid #ccc; /* Add a border */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for a subtle effect */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; /* Align the content inside */
+}
+
+mat-card-header {
+  padding-bottom: 8px; /* Optional padding for better spacing */
+}
+
+mat-card-title {
+  font-size: 1.2em; /* Adjust the title size as needed */
+}
+
+mat-card-content {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; /* Align the content inside */
+  align-items: center;
+}
+
+button mat-button {
+  margin: 0 8px;
+}
