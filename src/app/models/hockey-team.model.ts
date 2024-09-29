@@ -7,5 +7,5 @@ export interface HockeyTeam {
     mascotDescription: string;
     activeInd: boolean;
     teamInceptionYear: Date;
-    teamFinalYear: Date;
+    teamFinalYear?: Date;
 }

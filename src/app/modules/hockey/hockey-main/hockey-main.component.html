@@ -1,3 +1,7 @@
 <div class="hockey-main-container">
-  <app-hockey-header [hockeyLeagues]="hockeyLeagues"></app-hockey-header>
+  <app-hockey-header
+    [hockeyLeagues]="hockeyLeagues"
+    (leagueSelectionChange)="onLeagueSelect($event)"
+    (showGoaliesChange)="onShowGoalies()"
+  ></app-hockey-header>
 </div>

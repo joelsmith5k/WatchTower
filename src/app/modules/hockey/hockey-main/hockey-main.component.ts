@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { HockeyLeagueService } from '../../../services/hockey-league.service';
 import { HockeyLeague } from '../../../models/hockey-league.model';
 import { HockeyHeaderComponent } from '../hockey-header/hockey-header.component';
@@ -15,22 +15,33 @@ import { CommonModule } from '@angular/common';
 })
 export class HockeyMainComponent {
   public hockeyLeagues: HockeyLeague[] = [];
+  public selectedLeague?: HockeyLeague = undefined;
+  public isLeagueSelected: boolean = false;
+  public showGoalies: boolean = false;
   constructor(private hockeyLeagueService: HockeyLeagueService) {}
 
   ngOnInit(): void {
     this.getData();
-    console.log('enterd hockey main ng oninit');
   }
 
   private getData(): void {
     this.hockeyLeagueService.getHockeyLeagues().subscribe(
       (data) => {
-        console.log(data);
         this.hockeyLeagues = data;
       },
       (error) => {
         console.error('Error fetching data:', error);
       }
     );
+  }
+
+  public onLeagueSelect(selection: any) {
+    this.selectedLeague = selection;
+    this.isLeagueSelected = true;
+  }
+
+  public onShowGoalies() {
+    this.showGoalies = true;
+    this.isLeagueSelected = false;
   }
 }

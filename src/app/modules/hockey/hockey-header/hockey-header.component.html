@@ -1,7 +1,20 @@
 <mat-card class="hockey-header-card">
   <mat-card-content>
-    <div *ngFor="let h of hockeyLeagues">
-      <button mat-raised-button color="accent">{{ h.leagueCode }}</button>
+    <div class="league-row">
+      <div *ngFor="let league of hockeyLeagues">
+        <button
+          mat-raised-button
+          color="accent"
+          (click)="onSelectLeague(league)"
+        >
+          {{ league.leagueCode }}
+        </button>
+      </div>
+    </div>
+    <div *ngIf="isLeagueSelected" class="header-row">
+      <button mat-stroked-button color="accent" (click)="onShowGoalies()">
+        Show Goalies
+      </button>
     </div>
   </mat-card-content>
 </mat-card>

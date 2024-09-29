@@ -26,12 +26,10 @@ export class HomeComponent {
   }
 
   onLearnMore() {
-    console.log('Learn More button clicked!');
     this.showLearnMore = true;
   }
 
   onCloseLearnMore() {
-    console.log('Close Learn More button clicked!');
     this.showLearnMore = false;
   }
 
