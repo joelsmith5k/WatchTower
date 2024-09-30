@@ -14,10 +14,12 @@ import { NgModule } from '@angular/core';
 })
 export class HockeyHeaderComponent {
   @Input() hockeyLeagues: HockeyLeague[] = [];
+  @Output() clearLeagueSelection = new EventEmitter<any>();
   @Output() leagueSelectionChange = new EventEmitter<any>();
   @Output() showGoaliesChange = new EventEmitter<any>();
 
   public isLeagueSelected: boolean = false;
+  public showGoalies: boolean = false;
 
   onSelectLeague(item: any) {
     this.leagueSelectionChange.emit(item);
@@ -26,6 +28,13 @@ export class HockeyHeaderComponent {
 
   onShowGoalies() {
     this.isLeagueSelected = false;
+    this.showGoalies = true;
     this.showGoaliesChange.emit(true);
+  }
+
+  onClearLeagueSelection() {
+    this.clearLeagueSelection.emit(true);
+    this.showGoalies = false;
+    this.isLeagueSelected = false;
   }
 }

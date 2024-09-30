@@ -1,7 +1,8 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { HockeyLeagueService } from '../../../services/hockey-league.service';
-import { HockeyLeague } from '../../../models/hockey-league.model';
-import { HockeyHeaderComponent } from '../hockey-header/hockey-header.component';
+import { HockeyLeagueService } from '../../services/hockey-league.service';
+import { HockeyLeague } from '../../models/hockey-league.model';
+import { HockeyHeaderComponent } from './hockey-header/hockey-header.component';
+import { HockeyGoalieListComponent } from './hockey-goalie-list/hockey-goalie-list.component';
 import { NgTemplateOutlet } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -9,7 +10,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-hockey-main',
   standalone: true,
-  imports: [CommonModule, HockeyHeaderComponent],
+  imports: [CommonModule, HockeyHeaderComponent, HockeyGoalieListComponent],
   templateUrl: './hockey-main.component.html',
   styleUrl: './hockey-main.component.scss',
 })
@@ -43,5 +44,11 @@ export class HockeyMainComponent {
   public onShowGoalies() {
     this.showGoalies = true;
     this.isLeagueSelected = false;
+  }
+
+  public onClearLeagueSelection() {
+    this.selectedLeague = undefined;
+    this.isLeagueSelected = false;
+    this.showGoalies = false;
   }
 }

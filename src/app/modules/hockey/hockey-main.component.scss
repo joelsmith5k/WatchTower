@@ -9,6 +9,7 @@
 /* Container for centering */
 .hockey-main-container {
   display: flex;
+  flex-direction: column;
   justify-content: center; // Horizontal
   //align-items: center; // Vertical
   width: 100%;
