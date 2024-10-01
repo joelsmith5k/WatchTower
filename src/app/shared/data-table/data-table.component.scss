@@ -1,0 +1,39 @@
+:host {
+  display: flex;
+  flex: 1 1 auto;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  flex-direction: row;
+
+.div {
+    background-color: white;
+  }
+}
+
+.div,
+.table,
+.mat-table {
+  background-color: white;
+  color: black;
+}
+
+// selector for table headers custom styling
+.div,
+.table,
+.mat-table,
+.th,
+.mat-header-cell {
+  color: black;
+}
+
+// selector for table row cells custom styling
+.div,
+.table,
+.mat-table,
+.td,
+.mat-cell {
+  color: black;
+  background-color: whitesmoke;
+  border: 2px solid black;
+}

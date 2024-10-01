@@ -8,13 +8,22 @@
 }
 
 .hockey-goalie-list-card {
-    background: rgba(255, 255, 255, 0.9);
-    width: 100%; /* Full width of the parent */
-    height: 96x; /* Fixed height */
-    border: 2px solid #ccc; /* Add a border */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for a subtle effect */
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
+  background: rgba(255, 255, 255, 0.9);
+  width: 100%; /* Full width of the parent */
+  height: 96x; /* Fixed height */
+  border: 2px solid #ccc; /* Add a border */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for a subtle effect */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.league-row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 16px;
+}
