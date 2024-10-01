@@ -1,5 +1,5 @@
 <!-- shared-table.component.html -->
-<div *ngIf="dataSource.length > 0" class="table-container">
+<div class="table-container">
   <table mat-table [dataSource]="dataSource" class="mat-table mat-primary">
     <!-- Dynamic Column Definitions -->
     <ng-container
@@ -21,7 +21,8 @@
     <tr mat-header-row *matHeaderRowDef="tableProperties"></tr>
     <tr mat-row *matRowDef="let row; columns: tableProperties"></tr>
   </table>
-</div>
-<div *ngIf="dataSource.length == 0" lass="table-container">
-  <p>No Goalies For Selected League</p>
+  <mat-paginator
+    [pageSizeOptions]="[5, 10, 20]"
+    showFirstLastButtons
+  ></mat-paginator>
 </div>

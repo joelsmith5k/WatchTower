@@ -6,8 +6,9 @@
   padding: 16px;
   flex-direction: row;
 
-.div {
+  .div {
     background-color: white;
+    height: 200px;
   }
 }
 
@@ -25,6 +26,7 @@
 .th,
 .mat-header-cell {
   color: black;
+  border: 2px solid black;
 }
 
 // selector for table row cells custom styling
