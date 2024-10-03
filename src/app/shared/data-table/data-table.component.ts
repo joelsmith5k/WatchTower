@@ -11,12 +11,12 @@ import { NgModule } from '@angular/core';
 import { NgFor, CommonModule } from '@angular/common';
 import { CustomColumn } from '../../models/hockey-column-def';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
-import { MatSortModule } from '@angular/material/sort';
+import { MatSortModule, MatSort } from '@angular/material/sort';
 
 @Component({
   selector: 'app-data-table',
   standalone: true,
-  imports: [MatTableModule, NgFor, CommonModule, MatPaginatorModule],
+  imports: [MatTableModule, NgFor, CommonModule, MatPaginatorModule, MatSortModule],
   templateUrl: './data-table.component.html',
   styleUrl: './data-table.component.scss',
 })
@@ -29,6 +29,7 @@ export class DataTableComponent {
   public dataSource = new MatTableDataSource<any>();
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
 
   ngAfterViewInit() {
     if (this.entities.length > 0) {
@@ -39,12 +40,14 @@ export class DataTableComponent {
   ngOnInit(): void {
     this.tableProperties = this.tableDetails.map((td) => td.columnRef);
     this.tableHeaders = this.tableDetails.map((td) => td.columnHeader);
+    this.dataSource.sort = this.sort;
   }
 
   ngOnChanges() {
     // Update MatTableDataSource whenever the input data changes
     if (this.entities && this.entities.length > 0) {
       this.dataSource.data = this.entities;
+      this.dataSource.sort = this.sort;
     }
 
     // Assign paginator if it has been initialized

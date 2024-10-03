@@ -5,37 +5,35 @@
   align-items: center;
   padding: 16px;
   flex-direction: row;
-
-  .div {
-    background-color: white;
-    height: 200px;
-  }
 }
 
-.div,
-.table,
-.mat-table {
-  background-color: white;
-  color: black;
-}
-
-// selector for table headers custom styling
-.div,
-.table,
-.mat-table,
-.th,
+// table header styling
 .mat-header-cell {
-  color: black;
-  border: 2px solid black;
+  background-color: #3f51b5;
+  color: white;
+  font-weight: bold;
+  padding: 16px;
+  text-align: center;
 }
 
-// selector for table row cells custom styling
-.div,
-.table,
-.mat-table,
-.td,
+// table data rows styling
 .mat-cell {
-  color: black;
+  padding: 16px;
+  text-align: left;
+  border-bottom: 1px solid black;
   background-color: whitesmoke;
-  border: 2px solid black;
+  color: black;
+}
+
+tr:hover {
+  background-color: black;
+  cursor: pointer;
+}
+
+.mat-cell:hover{
+  background-color: darkgray;
+}
+
+.mat-row:hover{
+  background-color: blue;
 }
