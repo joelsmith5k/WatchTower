@@ -7,33 +7,31 @@
   flex-direction: row;
 }
 
-// table header styling
-.mat-header-cell {
-  background-color: #3f51b5;
+.custom-header-row {
+  background-color: black;
   color: white;
-  font-weight: bold;
-  padding: 16px;
-  text-align: center;
 }
 
-// table data rows styling
+.custom-header-row:hover {
+  background-color: black;
+  color: white;
+}
+
+.custom-data-row {
+  background-color: whitesmoke;
+  cursor: pointer;
+}
+
+.custom-data-row:hover {
+  background-color: darkgray;
+  cursor: pointer;
+}
+
 .mat-cell {
   padding: 16px;
   text-align: left;
   border-bottom: 1px solid black;
-  background-color: whitesmoke;
   color: black;
 }
 
-tr:hover {
-  background-color: black;
-  cursor: pointer;
-}
 
-.mat-cell:hover{
-  background-color: darkgray;
-}
-
-.mat-row:hover{
-  background-color: blue;
-}

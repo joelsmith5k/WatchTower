@@ -19,8 +19,8 @@
     </ng-container>
 
     <!-- Header and Row Declarations -->
-    <tr mat-header-row *matHeaderRowDef="tableProperties"></tr>
-    <tr mat-row *matRowDef="let row; columns: tableProperties"></tr>
+    <tr mat-header-row *matHeaderRowDef="tableProperties" class="custom-header-row"></tr>
+    <tr mat-row *matRowDef="let row; columns: tableProperties" class="custom-data-row"></tr>
   </table>
   <mat-paginator
     [pageSizeOptions]="[5, 10, 20]"
