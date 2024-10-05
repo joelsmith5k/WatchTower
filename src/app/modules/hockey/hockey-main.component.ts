@@ -12,7 +12,12 @@ import { HockeyGoalie } from '../../models/hockey-goalie.model';
 @Component({
   selector: 'app-hockey-main',
   standalone: true,
-  imports: [CommonModule, HockeyHeaderComponent, HockeyGoalieListComponent, HockeyGoalieDetailsComponent],
+  imports: [
+    CommonModule,
+    HockeyHeaderComponent,
+    HockeyGoalieListComponent,
+    HockeyGoalieDetailsComponent,
+  ],
   templateUrl: './hockey-main.component.html',
   styleUrl: './hockey-main.component.scss',
 })
@@ -54,13 +59,14 @@ export class HockeyMainComponent {
     this.selectedLeague = undefined;
     this.isLeagueSelected = false;
     this.showGoalies = false;
+    this.showGoalieDetails = false;
+    this.selectedGoalie = undefined;
   }
 
   public onShowHockeyGoalieDetails(item: any): void {
     console.log(item);
     this.showGoalieDetails = true;
     this.selectedGoalie = item;
-
   }
 
   public onClearHockeyGoalieSelection(): void {

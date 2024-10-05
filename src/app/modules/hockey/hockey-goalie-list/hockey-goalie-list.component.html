@@ -1,41 +1,46 @@
 <mat-card class="hockey-goalie-list-card">
-  <div *ngIf="hockeyLeague" class="hockey-goalie-list-header-row">
-    <mat-card-title  class="mat-accent"
+  <div
+    *ngIf="hockeyLeague && !showHockeyGoalieDetailsSelected"
+    class="hockey-goalie-list-header-row"
+  >
+    <mat-card-title class="component-title"
       >{{ hockeyLeague.leagueCode }} Goalies</mat-card-title
     >
   </div>
   <mat-card-content>
-    <!-- <div *ngIf="hockeyLeague" class="hockey-goalie-list-header-row">
-      <p></p>
-    </div> -->
-    <div *ngIf="hockeyGoalies">
+    <div *ngIf="hockeyGoalies && !showHockeyGoalieDetailsSelected">
       <app-data-table
         [entities]="hockeyGoalies"
         [tableDetails]="tableDetails"
         (rowClickEvent)="onHockeyGoalieSelected($event)"
       ></app-data-table>
+      <div class="hockey-goalie-list-header-row">
+        <p>
+          Selected Goalie:
+          {{
+            selectedHockeyGoalie
+              ? selectedHockeyGoalie.firstName +
+                " " +
+                selectedHockeyGoalie.lastName
+              : ""
+          }}
+        </p>
+      </div>
+      <div class="hockey-goalie-list-footer-row">
+        <button
+          *ngIf="selectedHockeyGoalie"
+          mat-stroked-button
+          color="accent"
+          (click)="onShowHockeyGoalieDetails()"
+        >
+          Show Details
+        </button>
+      </div>
     </div>
-    <div class="hockey-goalie-list-header-row">
-      <p>
-        Selected Goalie:
-        {{
-          selectedHockeyGoalie
-            ? selectedHockeyGoalie.firstName +
-              " " +
-              selectedHockeyGoalie.lastName
-            : ""
-        }}
-      </p>
-    </div>
-    <div class="hockey-goalie-list-footer-row">
-      <button
-        *ngIf="selectedHockeyGoalie"
-        mat-stroked-button
-        color="accent"
-        (click)="onShowHockeyGoalieDetails()"
-      >
-        Show Details
-      </button>
+    <div
+      *ngIf="hockeyGoalies && showHockeyGoalieDetailsSelected"
+      class="hockey-goalie-list-footer-row"
+    >
       <button
         *ngIf="selectedHockeyGoalie"
         mat-stroked-button

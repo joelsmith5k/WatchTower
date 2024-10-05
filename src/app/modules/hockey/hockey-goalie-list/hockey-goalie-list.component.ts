@@ -23,6 +23,7 @@ export class HockeyGoalieListComponent {
   @Output() clearHockeyGoalieSelection = new EventEmitter<any>();
   public hockeyGoalies: HockeyGoalie[] = [];
   public selectedHockeyGoalie?: HockeyGoalie = undefined;
+  public showHockeyGoalieDetailsSelected: boolean = false;
   public goalieTableHeaders = ['Goalie Code', 'First Name', 'Last Name'];
   public goalieTableProperties = ['goalieCode', 'firstName', 'lastName'];
   public tableDetails: CustomColumn[] = [
@@ -61,11 +62,13 @@ export class HockeyGoalieListComponent {
   public onShowHockeyGoalieDetails(): void {
     console.log('show details in goalie list..');
     this.showHockeyGoalieDetails.emit(this.selectedHockeyGoalie);
+    this.showHockeyGoalieDetailsSelected = true;
   }
 
   public onClearHockeyGoalieSelection(): void {
     console.log('clear selected goalie in goalie list..');
     this.selectedHockeyGoalie = undefined;
+    this.showHockeyGoalieDetailsSelected = false;
     this.clearHockeyGoalieSelection.emit(true);
   }
 }
