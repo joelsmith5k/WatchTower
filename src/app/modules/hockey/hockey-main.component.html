@@ -11,4 +11,7 @@
     (showHockeyGoalieDetails)="onShowHockeyGoalieDetails($event)"
     (clearHockeyGoalieSelection)="onClearHockeyGoalieSelection()"
   ></app-hockey-goalie-list>
+  <app-hockey-goalie-details
+  *ngIf="showGoalieDetails"
+></app-hockey-goalie-details>
 </div>

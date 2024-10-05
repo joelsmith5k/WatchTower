@@ -11,7 +11,16 @@
       ></app-data-table>
     </div>
     <div class="hockey-goalie-list-header-row">
-      <p>Selected Goalie: {{ selectedHockeyGoalie?.goalieCode || "" }}</p>
+      <p>
+        Selected Goalie:
+        {{
+          selectedHockeyGoalie
+            ? selectedHockeyGoalie.firstName +
+              " " +
+              selectedHockeyGoalie.lastName
+            : ""
+        }}
+      </p>
     </div>
     <div class="hockey-goalie-list-footer-row">
       <button
@@ -23,13 +32,13 @@
         Show Details
       </button>
       <button
-      *ngIf="selectedHockeyGoalie"
-      mat-stroked-button
-      color="accent"
-      (click)="onClearHockeyGoalieSelection()"
-    >
-      Clear Goalie Selection
-    </button>
+        *ngIf="selectedHockeyGoalie"
+        mat-stroked-button
+        color="accent"
+        (click)="onClearHockeyGoalieSelection()"
+      >
+        Clear Goalie Selection
+      </button>
     </div>
   </mat-card-content>
 </mat-card>

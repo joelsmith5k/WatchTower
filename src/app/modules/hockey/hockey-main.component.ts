@@ -3,6 +3,7 @@ import { HockeyLeagueService } from '../../services/hockey-league.service';
 import { HockeyLeague } from '../../models/hockey-league.model';
 import { HockeyHeaderComponent } from './hockey-header/hockey-header.component';
 import { HockeyGoalieListComponent } from './hockey-goalie-list/hockey-goalie-list.component';
+import { HockeyGoalieDetailsComponent } from './hockey-goalie-details/hockey-goalie-details.component';
 import { NgTemplateOutlet } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -11,7 +12,7 @@ import { HockeyGoalie } from '../../models/hockey-goalie.model';
 @Component({
   selector: 'app-hockey-main',
   standalone: true,
-  imports: [CommonModule, HockeyHeaderComponent, HockeyGoalieListComponent],
+  imports: [CommonModule, HockeyHeaderComponent, HockeyGoalieListComponent, HockeyGoalieDetailsComponent],
   templateUrl: './hockey-main.component.html',
   styleUrl: './hockey-main.component.scss',
 })
