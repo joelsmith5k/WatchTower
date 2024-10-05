@@ -8,7 +8,7 @@ import { DataTableComponent } from '../../../shared/data-table/data-table.compon
 
 import { HockeyGoalieService } from '../../../services/hockey-goalie.service';
 import { HockeyGoalie } from '../../../models/hockey-goalie.model';
-import { CustomColumn } from '../../../models/hockey-column-def';
+import { CustomColumn } from '../../../models/custom-column.model';
 
 @Component({
   selector: 'app-hockey-goalie-list',
@@ -59,12 +59,12 @@ export class HockeyGoalieListComponent {
   }
 
   public onShowHockeyGoalieDetails(): void {
-    console.log("show details in goalie list..");
+    console.log('show details in goalie list..');
     this.showHockeyGoalieDetails.emit(this.selectedHockeyGoalie);
   }
 
   public onClearHockeyGoalieSelection(): void {
-    console.log("clear selected goalie in goalie list..");
+    console.log('clear selected goalie in goalie list..');
     this.selectedHockeyGoalie = undefined;
     this.clearHockeyGoalieSelection.emit(true);
   }

@@ -11,7 +11,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatTableDataSource } from '@angular/material/table';
 import { NgModule } from '@angular/core';
 import { NgFor, CommonModule } from '@angular/common';
-import { CustomColumn } from '../../models/hockey-column-def';
+import { CustomColumn } from '../../models/custom-column.model';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule, MatSort } from '@angular/material/sort';
 

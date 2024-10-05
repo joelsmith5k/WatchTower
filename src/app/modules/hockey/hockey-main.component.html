@@ -12,6 +12,7 @@
     (clearHockeyGoalieSelection)="onClearHockeyGoalieSelection()"
   ></app-hockey-goalie-list>
   <app-hockey-goalie-details
-  *ngIf="showGoalieDetails"
-></app-hockey-goalie-details>
+    *ngIf="showGoalieDetails"
+    [hockeyGoalie]="selectedGoalie"
+  ></app-hockey-goalie-details>
 </div>
