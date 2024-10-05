@@ -1,4 +1,9 @@
 <mat-card class="hockey-goalie-details-card">
+  <div *ngIf="hockeyGoalie" class="hockey-goalie-list-header-row">
+    <mat-card-title  class="component-title"
+      >{{ hockeyGoalie.firstName + ' ' + hockeyGoalie.lastName }}</mat-card-title
+    >
+  </div>
   <mat-card-content>
     <p>Goalie Detail Component</p>
   </mat-card-content>

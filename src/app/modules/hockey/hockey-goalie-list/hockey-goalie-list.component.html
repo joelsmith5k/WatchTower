@@ -1,8 +1,13 @@
 <mat-card class="hockey-goalie-list-card">
+  <div *ngIf="hockeyLeague" class="hockey-goalie-list-header-row">
+    <mat-card-title  class="mat-accent"
+      >{{ hockeyLeague.leagueCode }} Goalies</mat-card-title
+    >
+  </div>
   <mat-card-content>
-    <div *ngIf="hockeyLeague" class="hockey-goalie-list-header-row">
-      <p>{{ hockeyLeague.leagueCode }} Goalies</p>
-    </div>
+    <!-- <div *ngIf="hockeyLeague" class="hockey-goalie-list-header-row">
+      <p></p>
+    </div> -->
     <div *ngIf="hockeyGoalies">
       <app-data-table
         [entities]="hockeyGoalies"

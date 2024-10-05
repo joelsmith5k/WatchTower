@@ -5,11 +5,20 @@ import { HockeyGoalService } from '../../../services/hockey-goal-service';
 import { HockeyAssistService } from '../../../services/hockey-assist-service';
 import { HockeyGoal } from '../../../models/hockey-goal.model';
 import { HockeyAssist } from '../../../models/hockey-assist.model';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
+@NgModule({
+  declarations: [],
+  imports: [ CommonModule ],
+  exports: [],
+  providers: [],
+})
+export class FeatureModule {}
 @Component({
   selector: 'app-hockey-goalie-details',
   standalone: true,
-  imports: [MatCardModule],
+  imports: [MatCardModule, CommonModule],
   templateUrl: './hockey-goalie-details.component.html',
   styleUrl: './hockey-goalie-details.component.scss',
 })
