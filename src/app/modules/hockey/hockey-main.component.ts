@@ -6,6 +6,7 @@ import { HockeyGoalieListComponent } from './hockey-goalie-list/hockey-goalie-li
 import { NgTemplateOutlet } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HockeyGoalie } from '../../models/hockey-goalie.model';
 
 @Component({
   selector: 'app-hockey-main',
@@ -17,8 +18,10 @@ import { CommonModule } from '@angular/common';
 export class HockeyMainComponent {
   public hockeyLeagues: HockeyLeague[] = [];
   public selectedLeague?: HockeyLeague = undefined;
+  public selectedGoalie?: HockeyGoalie = undefined;
   public isLeagueSelected: boolean = false;
   public showGoalies: boolean = false;
+  public showGoalieDetails: boolean = false;
   constructor(private hockeyLeagueService: HockeyLeagueService) {}
 
   ngOnInit(): void {
@@ -50,5 +53,17 @@ export class HockeyMainComponent {
     this.selectedLeague = undefined;
     this.isLeagueSelected = false;
     this.showGoalies = false;
+  }
+
+  public onShowHockeyGoalieDetails(item: any): void {
+    console.log(item);
+    this.showGoalieDetails = true;
+    this.selectedGoalie = item;
+
+  }
+
+  public onClearHockeyGoalieSelection(): void {
+    this.showGoalieDetails = false;
+    this.selectedGoalie = undefined;
   }
 }

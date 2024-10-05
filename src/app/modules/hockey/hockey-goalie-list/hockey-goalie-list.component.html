@@ -3,15 +3,33 @@
     <div *ngIf="hockeyLeague" class="hockey-goalie-list-header-row">
       <p>{{ hockeyLeague.leagueCode }} Goalies</p>
     </div>
-    <div class="hockey-goalie-list-header-row">
-      <p>Selected Goalie: {{ selectedHockeyGoalie?.goalieCode || "" }}</p>
-    </div>
     <div *ngIf="hockeyGoalies">
       <app-data-table
         [entities]="hockeyGoalies"
         [tableDetails]="tableDetails"
         (rowClickEvent)="onHockeyGoalieSelected($event)"
       ></app-data-table>
+    </div>
+    <div class="hockey-goalie-list-header-row">
+      <p>Selected Goalie: {{ selectedHockeyGoalie?.goalieCode || "" }}</p>
+    </div>
+    <div class="hockey-goalie-list-footer-row">
+      <button
+        *ngIf="selectedHockeyGoalie"
+        mat-stroked-button
+        color="accent"
+        (click)="onShowHockeyGoalieDetails()"
+      >
+        Show Details
+      </button>
+      <button
+      *ngIf="selectedHockeyGoalie"
+      mat-stroked-button
+      color="accent"
+      (click)="onClearHockeyGoalieSelection()"
+    >
+      Clear Goalie Selection
+    </button>
     </div>
   </mat-card-content>
 </mat-card>

@@ -8,5 +8,7 @@
   <app-hockey-goalie-list
     *ngIf="showGoalies"
     [hockeyLeague]="selectedLeague"
+    (showHockeyGoalieDetails)="onShowHockeyGoalieDetails($event)"
+    (clearHockeyGoalieSelection)="onClearHockeyGoalieSelection()"
   ></app-hockey-goalie-list>
 </div>

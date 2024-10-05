@@ -19,6 +19,8 @@ import { CustomColumn } from '../../../models/hockey-column-def';
 })
 export class HockeyGoalieListComponent {
   @Input() hockeyLeague?: HockeyLeague;
+  @Output() showHockeyGoalieDetails = new EventEmitter<any>();
+  @Output() clearHockeyGoalieSelection = new EventEmitter<any>();
   public hockeyGoalies: HockeyGoalie[] = [];
   public selectedHockeyGoalie?: HockeyGoalie = undefined;
   public goalieTableHeaders = ['Goalie Code', 'First Name', 'Last Name'];
@@ -54,5 +56,16 @@ export class HockeyGoalieListComponent {
 
   public onHockeyGoalieSelected(selectedRow: HockeyGoalie): void {
     this.selectedHockeyGoalie = selectedRow;
+  }
+
+  public onShowHockeyGoalieDetails(): void {
+    console.log("show details in goalie list..");
+    this.showHockeyGoalieDetails.emit(this.selectedHockeyGoalie);
+  }
+
+  public onClearHockeyGoalieSelection(): void {
+    console.log("clear selected goalie in goalie list..");
+    this.selectedHockeyGoalie = undefined;
+    this.clearHockeyGoalieSelection.emit(true);
   }
 }
