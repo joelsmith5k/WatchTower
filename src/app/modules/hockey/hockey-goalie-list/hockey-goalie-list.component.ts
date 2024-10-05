@@ -20,6 +20,7 @@ import { CustomColumn } from '../../../models/hockey-column-def';
 export class HockeyGoalieListComponent {
   @Input() hockeyLeague?: HockeyLeague;
   public hockeyGoalies: HockeyGoalie[] = [];
+  public selectedHockeyGoalie?: HockeyGoalie = undefined;
   public goalieTableHeaders = ['Goalie Code', 'First Name', 'Last Name'];
   public goalieTableProperties = ['goalieCode', 'firstName', 'lastName'];
   public tableDetails: CustomColumn[] = [
@@ -49,5 +50,9 @@ export class HockeyGoalieListComponent {
           console.error('Error fetching data:', error);
         }
       );
+  }
+
+  public onHockeyGoalieSelected(selectedRow: HockeyGoalie): void {
+    this.selectedHockeyGoalie = selectedRow;
   }
 }

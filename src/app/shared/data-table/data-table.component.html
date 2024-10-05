@@ -1,14 +1,18 @@
 <!-- shared-table.component.html -->
 <div class="table-container">
   <table mat-table [dataSource]="dataSource" matSort class="mat-table">
-
     <!-- Dynamic Column Definitions -->
     <ng-container
       *ngFor="let column of tableProperties; let i = index"
       [matColumnDef]="column"
     >
       <!-- Header Cell -->
-      <th mat-header-cell *matHeaderCellDef mat-sort-header class="mat-header-cell">
+      <th
+        mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
+        class="mat-header-cell"
+      >
         {{ tableHeaders[i] }}
       </th>
 
@@ -19,8 +23,17 @@
     </ng-container>
 
     <!-- Header and Row Declarations -->
-    <tr mat-header-row *matHeaderRowDef="tableProperties" class="custom-header-row"></tr>
-    <tr mat-row *matRowDef="let row; columns: tableProperties" class="custom-data-row"></tr>
+    <tr
+      mat-header-row
+      *matHeaderRowDef="tableProperties"
+      class="custom-header-row"
+    ></tr>
+    <tr
+      mat-row
+      *matRowDef="let row; columns: tableProperties"
+      class="custom-data-row"
+      (click)="onRowClick(row)"
+    ></tr>
   </table>
   <mat-paginator
     [pageSizeOptions]="[5, 10, 20]"

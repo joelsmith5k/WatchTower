@@ -1,12 +1,16 @@
 <mat-card class="hockey-goalie-list-card">
   <mat-card-content>
-    <div *ngIf="hockeyLeague" class="league-row">
+    <div *ngIf="hockeyLeague" class="hockey-goalie-list-header-row">
       <p>{{ hockeyLeague.leagueCode }} Goalies</p>
+    </div>
+    <div class="hockey-goalie-list-header-row">
+      <p>Selected Goalie: {{ selectedHockeyGoalie?.goalieCode || "" }}</p>
     </div>
     <div *ngIf="hockeyGoalies">
       <app-data-table
         [entities]="hockeyGoalies"
         [tableDetails]="tableDetails"
+        (rowClickEvent)="onHockeyGoalieSelected($event)"
       ></app-data-table>
     </div>
   </mat-card-content>
