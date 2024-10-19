@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { HockeyGoal } from '../models/hockey-goal.model';
+import { HockeyGoalSummaryGridItem } from '../models/hockey-goal-summary-grid-item';
 
 @Injectable({ providedIn: 'root' })
 export class HockeyGoalService {
@@ -16,6 +17,14 @@ export class HockeyGoalService {
   getGoalsByHockeyGoalie(goalieId: number): Observable<HockeyGoal[]> {
     return this.http.get<HockeyGoal[]>(
       this.baseUrl + this.entity + '/goalie/' + goalieId
+    );
+  }
+
+  getGoalSummaryGridItems(
+    goalieId: number
+  ): Observable<HockeyGoalSummaryGridItem[]> {
+    return this.http.get<HockeyGoalSummaryGridItem[]>(
+      this.baseUrl + this.entity + '/goalie/' + goalieId + '/aggregate'
     );
   }
 }

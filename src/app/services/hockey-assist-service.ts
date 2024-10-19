@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { HockeyAssist } from '../models/hockey-assist.model';
+import { HockeyAssistSummaryGridItem } from '../models/hockey-assist-summary-grid-item';
 
 @Injectable({ providedIn: 'root' })
 export class HockeyAssistService {
@@ -16,6 +17,14 @@ export class HockeyAssistService {
   getAssistsByHockeyGoalie(goalieId: number): Observable<HockeyAssist[]> {
     return this.http.get<HockeyAssist[]>(
       this.baseUrl + this.entity + '/goalie/' + goalieId
+    );
+  }
+
+  getAssistSummaryGridItems(
+    goalieId: number
+  ): Observable<HockeyAssistSummaryGridItem[]> {
+    return this.http.get<HockeyAssistSummaryGridItem[]>(
+      this.baseUrl + this.entity + '/goalie/' + goalieId + '/aggregate'
     );
   }
 }
