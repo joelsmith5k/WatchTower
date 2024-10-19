@@ -12,6 +12,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DataTableComponent } from '../../../shared/data-table/data-table.component';
 import { CustomColumn } from '../../../models/custom-column.model';
+import { PieChartComponent } from '../../../shared/pie-chart/pie-chart.component';
+import { ChartType } from 'angular-google-charts';
 
 @NgModule({
   declarations: [],
@@ -23,7 +25,13 @@ export class FeatureModule {}
 @Component({
   selector: 'app-hockey-goalie-details',
   standalone: true,
-  imports: [MatCardModule, CommonModule, MatTabsModule, DataTableComponent],
+  imports: [
+    MatCardModule,
+    CommonModule,
+    MatTabsModule,
+    DataTableComponent,
+    PieChartComponent,
+  ],
   templateUrl: './hockey-goalie-details.component.html',
   styleUrl: './hockey-goalie-details.component.scss',
 })
@@ -33,6 +41,7 @@ export class HockeyGoalieDetailsComponent {
   public hockeyAssists: HockeyAssist[] = [];
   public hockeyGoalSummaryGridItems: HockeyGoalSummaryGridItem[] = [];
   public hockeyAssistSummaryGridItems: HockeyAssistSummaryGridItem[] = [];
+  public pieChartInfo: any;
   public goalTableDetails: CustomColumn[] = [
     { columnRef: 'firstName', columnHeader: 'First Name' },
     { columnRef: 'lastName', columnHeader: 'Last Name' },
@@ -56,6 +65,23 @@ export class HockeyGoalieDetailsComponent {
     this.getHockeyAssists();
     this.getHockeyGoalSummaryGridItems();
     this.getHockeyAssistSummaryGridItems();
+    // Placeholder chart data
+    // TODO populate with goalie goals by position
+    this.pieChartInfo = {
+      type: ChartType.PieChart,
+      data: [
+        ['Position A', 30],
+        ['Position B', 50],
+        ['Position C', 20],
+      ],
+      options: {
+        title: 'My Pie Chart',
+        is3D: false,
+        pieHole: 0.4,
+      },
+      width: 500,
+      height: 300,
+    };
   }
 
   private getHockeyGoals(): void {

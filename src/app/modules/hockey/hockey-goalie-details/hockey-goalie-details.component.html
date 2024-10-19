@@ -20,7 +20,9 @@
           (rowClickEvent)="onHockeyAssistSummarySelected($event)"
         ></app-data-table>
       </mat-tab>
-      <mat-tab label="Position Breakdown"> Pie Chart Tab </mat-tab>
+      <mat-tab label="Position Breakdown">
+        <app-pie-chart [chartInfo]="pieChartInfo" />
+      </mat-tab>
     </mat-tab-group>
   </mat-card-content>
 </mat-card>
