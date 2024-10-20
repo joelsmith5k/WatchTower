@@ -20,7 +20,10 @@
           (rowClickEvent)="onHockeyAssistSummarySelected($event)"
         ></app-data-table>
       </mat-tab>
-      <mat-tab label="Position Breakdown">
+      <mat-tab
+        *ngIf="hockeyGoalPieChartData.length > 0"
+        label="Position Breakdown"
+      >
         <app-pie-chart [chartInfo]="pieChartInfo" />
       </mat-tab>
     </mat-tab-group>

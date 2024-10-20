@@ -41,6 +41,7 @@ export class HockeyGoalieDetailsComponent {
   public hockeyAssists: HockeyAssist[] = [];
   public hockeyGoalSummaryGridItems: HockeyGoalSummaryGridItem[] = [];
   public hockeyAssistSummaryGridItems: HockeyAssistSummaryGridItem[] = [];
+  public hockeyGoalPieChartData: [string, number][] = [];
   public pieChartInfo: any;
   public goalTableDetails: CustomColumn[] = [
     { columnRef: 'firstName', columnHeader: 'First Name' },
@@ -61,27 +62,11 @@ export class HockeyGoalieDetailsComponent {
   ) {}
 
   ngOnInit(): void {
+    this.getHockeyGoalPieChartItems();
     this.getHockeyGoals();
     this.getHockeyAssists();
     this.getHockeyGoalSummaryGridItems();
     this.getHockeyAssistSummaryGridItems();
-    // Placeholder chart data
-    // TODO populate with goalie goals by position
-    this.pieChartInfo = {
-      type: ChartType.PieChart,
-      data: [
-        ['Position A', 30],
-        ['Position B', 50],
-        ['Position C', 20],
-      ],
-      options: {
-        title: 'My Pie Chart',
-        is3D: false,
-        pieHole: 0.4,
-      },
-      width: 500,
-      height: 300,
-    };
   }
 
   private getHockeyGoals(): void {
@@ -124,7 +109,7 @@ export class HockeyGoalieDetailsComponent {
           this.hockeyGoalSummaryGridItems = data;
         },
         (error) => {
-          console.error('Error fetching hockeyGoalSummaryGridItems:', error);
+          console.error('Error fetching Goals:', error);
         }
       );
   }
@@ -139,7 +124,38 @@ export class HockeyGoalieDetailsComponent {
           this.hockeyAssistSummaryGridItems = data;
         },
         (error) => {
-          console.error('Error fetching hockeyAssistSummaryGridItems:', error);
+          console.error('Error fetching Assists:', error);
+        }
+      );
+  }
+
+  private getHockeyGoalPieChartItems(): void {
+    this.hockeyGoalService
+      .getGoalPieChartData(
+        this.hockeyGoalie?.goalieID ? this.hockeyGoalie.goalieID : 0
+      )
+      .subscribe(
+        (data) => {
+          console.log(data);
+          this.hockeyGoalPieChartData = data.map((item) => [
+            item.positionCode,
+            item.goalCount,
+          ]);
+          console.log(this.hockeyGoalPieChartData);
+          this.pieChartInfo = {
+            type: ChartType.PieChart,
+            data: this.hockeyGoalPieChartData,
+            options: {
+              title: 'Goals By Position',
+              is3D: false,
+              pieHole: 0.4,
+            },
+            width: 500,
+            height: 300,
+          };
+        },
+        (error) => {
+          console.error('Error fetching Position', error);
         }
       );
   }
