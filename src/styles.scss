@@ -9,8 +9,8 @@
 @import "../node_modules/@angular/material/prebuilt-themes/purple-green.css";
 
 // Define custom colors
-$primary-color: #333;
-$accent-color: #69f0ae;
+$custom-black: #000000;
+$custom-white: #ffffff;
 
 html,
 body {
@@ -23,5 +23,18 @@ body {
 
 // Use custom colors in global classes
 .component-title {
-  color: $accent-color;
+  color: $custom-black;
 }
+
+// custom theme for all app buttons
+.watchtower-button,
+.mat-button,
+.mat-raised-button,
+.mat-flat-button {
+  background-color: $custom-black !important;
+  color: $custom-white !important;
+  &:hover {
+    background-color: $custom-black !important;
+  }
+}
+

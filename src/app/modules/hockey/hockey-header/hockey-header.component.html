@@ -3,28 +3,28 @@
     <div class="league-row" *ngIf="!showGoalies">
       <div *ngFor="let league of hockeyLeagues">
         <button
+          class="watchtower-button"
           mat-raised-button
-          color="accent"
           (click)="onSelectLeague(league)"
         >
           {{ league.leagueCode }}
         </button>
       </div>
     </div>
-    <div>
+    <div class="league-option-row">
       <button
-        *ngIf="!showGoalies"
+        *ngIf="isLeagueSelected && !showGoalies"
+        class="watchtower-button"
         mat-stroked-button
-        color="accent"
         (click)="onShowGoalies()"
         [disabled]="!isLeagueSelected"
       >
         Show Goalies
       </button>
       <button
+        class="watchtower-button"
         *ngIf="showGoalies || isLeagueSelected"
         mat-stroked-button
-        color="accent"
         (click)="onClearLeagueSelection()"
       >
         Clear League Selection

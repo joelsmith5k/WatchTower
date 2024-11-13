@@ -2,11 +2,7 @@
   <div
     *ngIf="hockeyLeague && !showHockeyGoalieDetailsSelected"
     class="hockey-goalie-list-header-row"
-  >
-    <mat-card-title class="component-title"
-      >{{ hockeyLeague.leagueCode }} Goalies</mat-card-title
-    >
-  </div>
+  ></div>
   <mat-card-content>
     <div *ngIf="hockeyGoalies && !showHockeyGoalieDetailsSelected">
       <app-data-table
@@ -15,8 +11,7 @@
         (rowClickEvent)="onHockeyGoalieSelected($event)"
       ></app-data-table>
       <div class="hockey-goalie-list-header-row">
-        <p>
-          Selected Goalie:
+        <h3>
           {{
             selectedHockeyGoalie
               ? selectedHockeyGoalie.firstName +
@@ -24,13 +19,13 @@
                 selectedHockeyGoalie.lastName
               : ""
           }}
-        </p>
+        </h3>
       </div>
       <div class="hockey-goalie-list-footer-row">
         <button
+          class="watchtower-button"
           *ngIf="selectedHockeyGoalie"
           mat-stroked-button
-          color="accent"
           (click)="onShowHockeyGoalieDetails()"
         >
           Show Details
@@ -42,9 +37,9 @@
       class="hockey-goalie-list-footer-row"
     >
       <button
+        class="watchtower-button"
         *ngIf="selectedHockeyGoalie"
         mat-stroked-button
-        color="accent"
         (click)="onClearHockeyGoalieSelection()"
       >
         Clear Goalie Selection

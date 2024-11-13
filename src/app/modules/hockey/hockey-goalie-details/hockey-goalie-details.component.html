@@ -1,8 +1,13 @@
 <mat-card class="hockey-goalie-details-card">
   <div *ngIf="hockeyGoalie" class="hockey-goalie-list-header-row">
-    <mat-card-title class="component-title">{{
-      hockeyGoalie.firstName + " " + hockeyGoalie.lastName
-    }}</mat-card-title>
+    <h3>
+      {{
+        hockeyGoalie.firstName +
+          " " +
+          hockeyGoalie.lastName +
+          " Goal and Assist Breakdown"
+      }}
+    </h3>
   </div>
   <mat-card-content>
     <mat-tab-group>
