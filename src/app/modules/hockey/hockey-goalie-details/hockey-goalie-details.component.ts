@@ -149,6 +149,16 @@ export class HockeyGoalieDetailsComponent {
               title: 'Goals By Position',
               is3D: false,
               pieHole: 0.4,
+              colors: [
+                '#1E90FF', // Dodger Blue
+                '#A9A9A9', // Dark Gray
+                '#90EE90', // Light Green
+                '#40E0D0', // Turquoise
+                '#000000', // Black
+                '#D3D3D3', // Light Gray
+                '#4682B4', // Steel Blue
+                '#5F9EA0', // Cadet Blue
+              ],
             },
             width: 500,
             height: 300,
