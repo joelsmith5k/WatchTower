@@ -11,24 +11,30 @@
   </div>
   <mat-card-content>
     <mat-tab-group>
-      <mat-tab label="Goals Against">
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <span class="custom-tab-label">Goals Against</span>
+        </ng-template>
         <app-data-table
           [entities]="hockeyGoalSummaryGridItems"
           [tableDetails]="goalTableDetails"
           (rowClickEvent)="onHockeyGoalSummarySelected($event)"
         ></app-data-table>
       </mat-tab>
-      <mat-tab label="Assists Against">
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <span class="custom-tab-label">Assists Against</span>
+        </ng-template>
         <app-data-table
           [entities]="hockeyAssistSummaryGridItems"
           [tableDetails]="assistTableDetails"
           (rowClickEvent)="onHockeyAssistSummarySelected($event)"
         ></app-data-table>
       </mat-tab>
-      <mat-tab
-        *ngIf="hockeyGoalPieChartData.length > 0"
-        label="Position Breakdown"
-      >
+      <mat-tab *ngIf="hockeyGoalPieChartData.length > 0">
+        <ng-template mat-tab-label>
+          <span class="custom-tab-label">Goals By Position</span>
+        </ng-template>
         <app-pie-chart [chartInfo]="pieChartInfo" />
       </mat-tab>
     </mat-tab-group>
