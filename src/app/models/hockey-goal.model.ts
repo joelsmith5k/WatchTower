@@ -6,8 +6,9 @@ import { HockeyPlayer } from './hockey-player.model';
 export interface HockeyGoal {
   goalId: number;
   goalieId: number;
+  goalieTeamId: number;
   playerId: number;
-  teamId: number;
+  playerTeamId: number;
   positionId?: number;
   dexterityId?: number;
   positionX?: number;
@@ -15,6 +16,8 @@ export interface HockeyGoal {
   date?: Date;
   hockeyGoalie?: HockeyGoalie;
   hockeyPlayer?: HockeyPlayer;
-  hockeyTeam?: HockeyTeam;
+  playerTeam?: HockeyTeam;
+  goalieTeam?: HockeyTeam;
   hockeyLeague?: HockeyLeague;
+  goalDate?: Date;
 }
