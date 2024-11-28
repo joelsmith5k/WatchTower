@@ -4,10 +4,11 @@ import { Observable } from 'rxjs';
 import { HockeyGoal } from '../models/hockey-goal.model';
 import { HockeyGoalSummaryGridItem } from '../models/hockey-goal-summary-grid-item';
 import { HockeyGoalPieChartItem } from '../models/hockey-goal-pie-chart-item copy';
+import { environment } from '../../environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class HockeyGoalService {
-  private baseUrl = 'http://localhost:5127/api/';
+  private baseUrl = environment.apiBaseUrl;
   private entity = 'HockeyGoal';
   constructor(private http: HttpClient) {}
 

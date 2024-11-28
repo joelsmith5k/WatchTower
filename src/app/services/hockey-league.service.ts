@@ -4,11 +4,12 @@ import { Observable } from 'rxjs';
 
 import { HockeyLeague } from '../models/hockey-league.model';
 import { HockeyTeam } from '../models/hockey-team.model';
+import { environment } from '../../environments/environment';
 
 @Injectable({providedIn: 'root'})
 export class HockeyLeagueService {
 
-  private baseUrl = 'http://localhost:5127/api/';
+  private baseUrl = environment.apiBaseUrl;
   private entity = 'HockeyLeague';
   constructor(private http: HttpClient) { }
 

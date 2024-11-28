@@ -3,10 +3,11 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { HockeyAssist } from '../models/hockey-assist.model';
 import { HockeyAssistSummaryGridItem } from '../models/hockey-assist-summary-grid-item';
+import { environment } from '../../environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class HockeyAssistService {
-  private baseUrl = 'http://localhost:5127/api/';
+  private baseUrl = environment.apiBaseUrl;
   private entity = 'HockeyAssist';
   constructor(private http: HttpClient) {}
 
