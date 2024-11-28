@@ -60,13 +60,11 @@ export class HockeyGoalieListComponent {
   }
 
   public onShowHockeyGoalieDetails(): void {
-    console.log('show details in goalie list..');
     this.showHockeyGoalieDetails.emit(this.selectedHockeyGoalie);
     this.showHockeyGoalieDetailsSelected = true;
   }
 
   public onClearHockeyGoalieSelection(): void {
-    console.log('clear selected goalie in goalie list..');
     this.selectedHockeyGoalie = undefined;
     this.showHockeyGoalieDetailsSelected = false;
     this.clearHockeyGoalieSelection.emit(true);

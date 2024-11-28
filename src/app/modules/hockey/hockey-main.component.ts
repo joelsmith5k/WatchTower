@@ -64,7 +64,6 @@ export class HockeyMainComponent {
   }
 
   public onShowHockeyGoalieDetails(item: any): void {
-    console.log(item);
     this.showGoalieDetails = true;
     this.selectedGoalie = item;
   }

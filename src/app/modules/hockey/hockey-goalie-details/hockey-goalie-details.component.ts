@@ -136,12 +136,10 @@ export class HockeyGoalieDetailsComponent {
       )
       .subscribe(
         (data) => {
-          console.log(data);
           this.hockeyGoalPieChartData = data.map((item) => [
             item.positionCode,
             item.goalCount,
           ]);
-          console.log(this.hockeyGoalPieChartData);
           this.pieChartInfo = {
             type: ChartType.PieChart,
             data: this.hockeyGoalPieChartData,
@@ -171,12 +169,10 @@ export class HockeyGoalieDetailsComponent {
   }
 
   public onHockeyGoalSummarySelected(selectedRow: HockeyGoalie): void {
-    console.log('clicked on goal');
-    console.log(selectedRow);
+    console.log("");
   }
 
   public onHockeyAssistSummarySelected(selectedRow: HockeyGoalie): void {
-    console.log('clicked on assist');
-    console.log(selectedRow);
+    console.log("");
   }
 }
