@@ -7,28 +7,58 @@
   flex-direction: row;
 }
 
-.hockey-goalie-list-card {
-  background: rgba(255, 255, 255, 0.9);
-  width: 100%; /* Full width of the parent */
-  height: 96x; /* Fixed height */
-  border: 2px solid #ccc; /* Add a border */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for a subtle effect */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+@media (max-width: 400px) {
+  .hockey-goalie-list-card {
+    background: rgba(255, 255, 255, 0.9);
+    width: 375px;
+    height: 96x;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .hockey-goalie-list-header-row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hockey-goalie-list-footer-row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
-.hockey-goalie-list-header-row {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+@media (min-width: 401px) {
+  .hockey-goalie-list-card {
+    background: rgba(255, 255, 255, 0.9);
+    width: 100%;
+    height: 96x;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 
-.hockey-goalie-list-footer-row {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  .hockey-goalie-list-header-row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hockey-goalie-list-footer-row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
