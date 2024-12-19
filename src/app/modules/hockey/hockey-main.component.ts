@@ -4,6 +4,7 @@ import { HockeyLeague } from '../../models/hockey-league.model';
 import { HockeyHeaderComponent } from './hockey-header/hockey-header.component';
 import { HockeyGoalieListComponent } from './hockey-goalie-list/hockey-goalie-list.component';
 import { HockeyGoalieDetailsComponent } from './hockey-goalie-details/hockey-goalie-details.component';
+import { LoadingPlaceholderComponent } from '../../shared/loading-placeholder/loading-placeholder.component';
 import { NgTemplateOutlet } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -17,6 +18,7 @@ import { HockeyGoalie } from '../../models/hockey-goalie.model';
     HockeyHeaderComponent,
     HockeyGoalieListComponent,
     HockeyGoalieDetailsComponent,
+    LoadingPlaceholderComponent,
   ],
   templateUrl: './hockey-main.component.html',
   styleUrl: './hockey-main.component.scss',
@@ -28,6 +30,7 @@ export class HockeyMainComponent {
   public isLeagueSelected: boolean = false;
   public showGoalies: boolean = false;
   public showGoalieDetails: boolean = false;
+  public dataDescription = '';
   constructor(private hockeyLeagueService: HockeyLeagueService) {}
 
   ngOnInit(): void {

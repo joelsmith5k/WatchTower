@@ -1,5 +1,10 @@
 <div class="hockey-main-container">
+  <app-loading-placeholder
+    *ngIf="hockeyLeagues.length === 0"
+    [dataDescription]="dataDescription"
+  ></app-loading-placeholder>
   <app-hockey-header
+    *ngIf="hockeyLeagues.length > 0"
     [hockeyLeagues]="hockeyLeagues"
     (leagueSelectionChange)="onLeagueSelect($event)"
     (showGoaliesChange)="onShowGoalies()"
