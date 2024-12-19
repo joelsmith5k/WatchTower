@@ -24,10 +24,7 @@ export class HockeyGoalieListComponent {
   public hockeyGoalies: HockeyGoalie[] = [];
   public selectedHockeyGoalie?: HockeyGoalie = undefined;
   public showHockeyGoalieDetailsSelected: boolean = false;
-  public goalieTableHeaders = ['Goalie Code', 'First Name', 'Last Name'];
-  public goalieTableProperties = ['goalieCode', 'firstName', 'lastName'];
   public tableDetails: CustomColumn[] = [
-    { columnRef: 'goalieCode', columnHeader: 'Goalie Code' },
     { columnRef: 'firstName', columnHeader: 'First Name' },
     { columnRef: 'lastName', columnHeader: 'Last Name' },
     { columnRef: 'teamCode', columnHeader: 'Team' },
