@@ -30,7 +30,7 @@ export class HockeyMainComponent {
   public isLeagueSelected: boolean = false;
   public showGoalies: boolean = false;
   public showGoalieDetails: boolean = false;
-  public dataDescription = '';
+  public dataDescription = 'Hockey Leagues';
   constructor(private hockeyLeagueService: HockeyLeagueService) {}
 
   ngOnInit(): void {
